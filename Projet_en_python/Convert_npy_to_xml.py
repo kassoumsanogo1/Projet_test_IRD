@@ -28,4 +28,4 @@ tree.write('data_file.xml')
 # Tout d'abord j'ai converti le fichier .npy en .xml 
 # puis je l'ai fourni à mon API finale pour  avoir la prédiction.
 
-#Jai ajouté une capture de la prediction que j'ai téléchargé à partir de Postman.
+#Jai ajouté le json de la prediction que j'ai téléchargé à partir de Postman (response_prediction).

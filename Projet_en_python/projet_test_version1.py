@@ -9,7 +9,7 @@ model = tf.keras.models.load_model('model.h5')
 
 @app.route('/predict', methods=['POST'])
 def make_prediction():
-    # Récupérer les données JSON envoyées par le client
+    # Récupérer les données Numpy envoyées par le client
     data = np.load('signals.npy')
  
     # Exemple simple : renvoyer les données numpy en tant que prédiction
@@ -17,6 +17,8 @@ def make_prediction():
 
     # Retourner la réponse au client
     response = {'prediction': prediction.tolist()}
+
+    # mettre la réponse sous format json 
     return jsonify(response)
 
 if __name__ == '__main__':

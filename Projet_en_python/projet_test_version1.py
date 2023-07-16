@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     #REMARQUE POUR TESTER : 
 
-    #Ceci est la première version de l'API
+    #Ceci est la première version de l'API en format prédiction directe sans traitement
     #J'ai utilisé Flask pour la génération sous forme d'application.
     #Cette version me permet de tester directement sur Postman avec les données signals.py pour avoir la prédiction,
     # j'ajouterai une capture d'écran pour vous montrez la prédiction que j'ai eu. 

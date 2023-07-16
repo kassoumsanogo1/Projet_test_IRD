@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>IRD</groupId>
+  <artifactId>IRD</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+        <groupId>org.deeplearning4j</groupId>
+        <artifactId>deeplearning4j-core</artifactId>
+        <version>1.0.0-beta7</version>
+    </dependency>
+    <dependency>
+        <groupId>org.deeplearning4j</groupId>
+        <artifactId>deeplearning4j-modelimport</artifactId>
+        <version>1.0.0-beta7</version>
+    </dependency>
+    <dependency>
+        <groupId>org.tensorflow</groupId>
+        <artifactId>tensorflow-core-platform</artifactId>
+        <version>0.5.0</version>
+    </dependency>
+    <dependency>
+  <groupId>org.tensorflow</groupId>
+  <artifactId>tensorflow-core-api</artifactId> 
+  <version>0.5.0</version>
+</dependency>
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.12.5</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-xml</artifactId>
+    <version>2.12.5</version>
+</dependency>
+
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.1</version>
+</dependency>
+
+
+
+<dependency>
+  <groupId>org.json</groupId>
+  <artifactId>json</artifactId>
+  <version>20210307</version>
+</dependency>
+
+
+    
+     <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-tensorflow</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>tensorflow-platform</artifactId>
+            <version>${tensorflow.version}-${javacpp.version}</version>
+        </dependency>
+
+	<dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>samediff-import-tensorflow</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+
+
+</dependencies>
+<repositories>
+    <repository>
+        <id>tensorflow-snapshots</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+
+<properties>
+        <dl4j-master.version>1.0.0-M2.1</dl4j-master.version>
+        <!-- Change the nd4j.backend property to nd4j-cuda-X-platform to use CUDA GPUs -->
+        <nd4j.backend>nd4j-native</nd4j.backend>
+        <!-- <nd4j.backend>nd4j-cuda-10.2-platform</nd4j.backend> -->
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven.minimum.version>3.3.1</maven.minimum.version>
+        <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
+        <maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
+        <logback.version>1.1.7</logback.version>
+        <javacpp.version>1.5.7</javacpp.version>
+        <tensorflow.version>1.15.5</tensorflow.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.8.0-M1</junit.version>
+    </properties>
+
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

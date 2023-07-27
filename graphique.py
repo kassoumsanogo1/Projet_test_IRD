@@ -1,47 +1,43 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Exemple de données numpy
-#data_numpy = np.random.rand(100, 3)  # Génération aléatoire de 100 lignes x 3 colonnes
 data_numpy = np.load('C:/Users/HP/OneDrive/Documents/PROJET IRD/Projet_en_python/signals.npy')
-# Convertir les données numpy en liste Python
-data_list = data_numpy.tolist()
 
-# Nombre de sous-graphiques que vous souhaitez afficher
-num_subplots = 3
+# choisissez entre le nombre de x à considérer dans cette partie
+# Nombre de données à afficher 3 ici
+# num_data = 3
 
-# Calcul du nombre de lignes et de colonnes pour la disposition des sous-graphiques
-rows = num_subplots
-cols = 1
+#Pour afficher tous le graphique en tenant compte de toutes les données dans le fichier numpy
+# Nombre de données à afficher (toutes les données dans cet exemple)
+num_data = data_numpy.shape[0]
 
-# Création des sous-graphiques
-fig, axes = plt.subplots(rows, cols, figsize=(8, 6))
 
-# Tracé de chaque sous-ensemble de données
-for i in range(num_subplots):
-    x = range(len(data_list))
-    y = [row[i] for row in data_list]
+# Taille de la figure (en pouces) pour unr figure plus large
+fig_width = 25
+fig_height = 8
+
+# Création de la figure avec la taille souhaitée
+fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+
+# Tracé de chaque donnée
+for i in range(num_data):
+    data = data_numpy[i, :, 0]
+    x = range(len(data))
     
-    # Utilisation de chaque axe pour créer un sous-graphique
-    if num_subplots > 1:
-        ax = axes[i]
-    else:
-        ax = axes
+    plt.plot(x, data, label='Donnée {}'.format(i+1))
     
-    ax.plot(x, y, label='Colonne {}'.format(i+1))
-    ax.set_xlabel('Index')
-    ax.set_ylabel('Valeurs')
-    ax.set_title('Graphique {}'.format(i+1))
-    ax.legend()
-    ax.grid(True)
 
-# Ajustement des espacements entre les sous-graphiques
-plt.tight_layout()
+plt.xlabel('Valeurs')
+plt.ylabel('Amplitudes')
+plt.title('Graphique avec 3 données ')
+#plt.legend()
+plt.grid(True)
 
 # Enregistrer les figures au format JPG
-for i, ax in enumerate(axes):
-    filename = f'C:/Users/HP/OneDrive/Documents/PROJET IRD/Projet_en_python/graphique_{i+1}.jpg'
-    ax.get_figure().savefig(filename, format='jpg')
+filename = f'C:/Users/HP/OneDrive/Documents/PROJET IRD/Projet_en_python/graphique_avec_3_données.jpg'
+plt.savefig(filename, format='jpg')
 
-# Affichage de la figure avec les sous-graphiques
 plt.show()
+
+
+
